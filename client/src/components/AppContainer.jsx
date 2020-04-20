@@ -11,15 +11,22 @@ class AppContainer extends Component {
         super(props);
         this.state = {  }
     }
+
     render() { 
         return ( 
             <div>
+                <Router>
                 <h1>AppContainer</h1>
-                <ListItems/>
+                <Link to='/'>Home Page</Link>
+                <Route exact path="/" component={ListItems}/>
+                <Route exact path="/:item_name" component={ViewItem}/>
+
+                {/* 
                 <AddItem/>
                 <EditItem/>
                 <DeleteItem/>
-                <ViewItem/>
+                */}
+                </Router>
             </div>
          );
     }

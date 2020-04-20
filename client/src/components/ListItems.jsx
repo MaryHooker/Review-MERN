@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import ViewItem from './ViewItem';
 
 class ListItems extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            listOfItems:[],
+            listOfItems: [],
         }
     }
     //Called when intially mounted. Call method to load data
@@ -31,17 +32,24 @@ class ListItems extends Component {
         return (
             <div>
                 <h2>ListItems</h2>
-                {
-                    this.state.listOfItems.map((item)=>{
-                        return(
-                            <div key={item._id}>
-                                <p><span>Item:</span> {item.itemName}</p>
-                                <p><span>Price:</span> {item.itemPrice}</p>
-                                <hr/>
-                            </div>
-                        )
-                    })
-                }
+                
+                    {
+                        this.state.listOfItems.map((item) => {
+                            return (
+                                <div key={item._id}>
+                                    <p><span>Item:</span> 
+                                    <Link to={`/${item.itemName}`}>
+                                        {item.itemName}
+                                    </Link>
+                                 
+                                    </p>
+                                    <p><span>Price:</span> {item.itemPrice}</p>
+                                    <hr />
+                                </div>
+                            )
+                        })
+                    }
+              
             </div>
         );
     }
