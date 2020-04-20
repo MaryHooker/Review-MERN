@@ -14,5 +14,5 @@ class ViewItem extends Component {
          );
     }
 }
- 
+
 export default ViewItem;
