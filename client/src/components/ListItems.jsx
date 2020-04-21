@@ -31,7 +31,7 @@ class ListItems extends Component {
     render() {
         return (
             <div>
-                <h2>ListItems</h2>
+                <h2>Items For Sell</h2>
                 
                     {
                         this.state.listOfItems.map((item) => {
@@ -43,7 +43,7 @@ class ListItems extends Component {
                                     </Link>
                                  
                                     </p>
-                                    <p><span>Price:</span> {item.itemPrice}</p>
+                                    <p><span>Price:</span> ${item.itemPrice}</p>
                                     <hr />
                                 </div>
                             )

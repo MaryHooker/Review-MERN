@@ -51,10 +51,10 @@ class ViewItem extends Component {
     render() {
         return (
             <div>
-                <h2>View Item {this.props.match.params.item_name}</h2>
-                <p>Name: {this.state.item.itemName}</p>
-                <p>Description: {this.state.item.itemDesc}</p>
-                <p>Price: {this.state.item.itemPrice}</p>
+                <h2>Item Details for {this.props.match.params.item_name}</h2>
+                <p><span>Name:</span> {this.state.item.itemName}</p>
+                <p><span>Description:</span> {this.state.item.itemDesc}</p>
+                <p><span>Price:</span> ${this.state.item.itemPrice}</p>
                 <button>Edit</button>  <button onClick={this.deleteItem}>Delete</button>
             </div>
         );
